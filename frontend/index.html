@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursive Algorithms Tester</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Recursive Algorithms Performance Tester</h1>
+
+        <div class="control-panel">
+            <div class="input-group">
+                <label for="algorithm">Algorithm:</label>
+                <select id="algorithm">
+                    <option value="fibonacci">Fibonacci</option>
+                    <option value="tree_traversal">Tree Traversal</option>
+                    <option value="pathfinding">Pathfinding</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="depth">Recursion Depth/Size:</label>
+                <input type="number" id="depth" value="10" min="1" max="10000">
+            </div>
+
+            <div class="input-group">
+                <label>
+                    <input type="checkbox" id="optimized" checked>
+                    Use Optimization
+                </label>
+            </div>
+
+            <div class="button-group">
+                <button id="computeSingle">Compute Single</button>
+                <button id="stressTest">Stress Test (5000 requests)</button>
+                <button id="optimizedTest">Optimized Test (10000 requests)</button>
+            </div>
+        </div>
+
+        <div class="progress-section hidden" id="progressSection">
+            <h3>Progress</h3>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div id="progressText">0%</div>
+        </div>
+
+        <div class="results">
+            <div class="result-card">
+                <h3>Latest Result</h3>
+                <div id="latestResult" class="result-content"></div>
+            </div>
+
+            <div class="result-card">
+                <h3>Performance Metrics</h3>
+                <div id="performanceMetrics" class="result-content"></div>
+            </div>
+
+            <div class="result-card">
+                <h3>Error Log</h3>
+                <div id="errorLog" class="result-content error-log"></div>
+            </div>
+        </div>
+
+        <!-- Error Modal -->
+        <div id="errorModal" class="modal hidden">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>Edge Case Error</h3>
+                <p id="modalMessage"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
